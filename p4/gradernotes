@@ -1,0 +1,52 @@
+I believe everything works perfectly under all conditions.
+I wrote this code myself. I did the best to document
+everything as best as possible.
+Everything that is send to stderr is meant to mimic the
+errors that the tcsh shell would say.
+
+I also included the CHK file to help handle some 
+failures of forks, and other type things.
+
+CD: Cd is handled the correct way as specified in the 
+direction in the class notes.
+
+Redirection: this is handled as if it sees more than
+one "<" or more than one ">" it will say that 
+input/output is ambigious. If the redirection gets 
+the background character "&" then it will produce
+an error that you did not input a file name for redirection.
+
+
+LS-F: ls-f works perfectly the way it is supposed to.
+One thing to note is that when ls-f sees a argument
+it will first get the current working directory path
+name and place it in a buffer array. It also keeps a 
+character pointer to the beggining of this buffer array
+and then once the ls-F starts it will change the directory
+to the directory being read from. Once it is finished it 
+will change the directory back to the string in the
+buffer array.
+
+PIPE: I made a private method to handle the way pipe works.It 
+works just like pipe.c would work. It initializes redirection
+the way any other command would do it. It sees the code for
+initializing redirection before any pipe work starts. 
+Within the pipe method then it will actually do the redirection.
+Pipe also handles background jobs just like any other command
+which is done within the pipe method. It will take the first
+command for example: " echo hello | tr 'a-z' 'A-Z' " it will
+print out the child with the name of echo and then the child_pid.
+
+"$": The $ is set up to work where if it sees the $
+newargv will point to the enviroment variable name.
+It does this within the parse method. Also redirection
+is handled with the $ in the parse method. Basically
+the program with process redirection as normal. once it
+sees redirection it will set the IN/OUT flags and
+do redirection before it sees any type of forking.
+
+Lastly, setenv and printenv are set up to work exactly
+the way they are supposed to. There seems to be no issues
+with these commands. 
+
+ 

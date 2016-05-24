@@ -1,0 +1,30 @@
+I believe eveything works perfectly under all conditions. 
+I wrote the p3helper.c code myself.
+I achieved successful coordination by using an algorithm to
+print out the numbers of each robot in a triangle shape.
+
+The algorithm is explained as:
+
+There are two files used: count and row. Each files contains
+important information that each robot uses in order to print
+in a triangle. 
+
+count= current count
+row= current row that numbers are being printed on.
+
+The algorithm uses a for loop to count how many
+numbers have been printed out before the current row. Once it
+finds that number it subtracts it from count. If that 
+number is equal to the row number then it will print
+the "N\n" at the end of the last number on that line.
+If the count does not equal the row then it will
+just print the number without the "N\n". Once count
+equals the total number of widgets that are going
+to be printed it will close all file and 
+semaphores and print the "F\n" instead of the "N\n".
+
+In order for the whole program to run successfully I
+placed a critical section around the first initalization
+of the files. The other critical section is around the 
+algo making sure that each robot uses the correct numbers
+when placing the widgets.

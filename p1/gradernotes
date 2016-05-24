@@ -1,0 +1,7 @@
+I believe everything works perfectly under all conditions. I wrote this code myself. This file should work perfectly
+with anything you might throw at it.
+I also put in an error. If getword() ever returns a -2 that means there was a
+quote left open. I also wanted to note that I used if statements instead of a
+switch statement because I feel more comfortable using if statements its seems
+easier to read for me. Hopefully My documentation within the document is
+satisfactory to read my code.

@@ -1,0 +1,5 @@
+I believe everything works perfectly under all conditions.
+I wrote this code myself. I did the best to document
+everything as best as possible.
+Everything that is send to stderr is meant to mimic the
+erros that the tcsh shell would say. 
